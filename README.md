@@ -16,20 +16,6 @@
 | **PDF 解析** | `unstructured` + `pypdf` |
 | **部署方式** | 单机 CLI（无需 Web 服务） |
 
-## 📁 项目结构
-├── build_db.py # 数据构建入口
-├── main.py # 问答交互入口
-├── report_faiss_db/ # 财报 FAISS 向量库
-├── databases/finance.db # 股价 SQLite 数据库
-├── data/
-│ ├── financial_reports/ # 财报 PDF
-│ └── stock_prices/ # 股价 CSV/Excel
-└── src/ # 核心模块
-    ├── finchatbi.py # 主问答 Agent
-    ├── embeddings.py # Qwen Embedding 封装
-    ├── build_report_rag.py # 构建财报向量库
-    ├── load_stock_prices.py # 加载股价数据
-    └── parse_reports.py # PDF 财报解析
 
 ## 🚀 快速开始
 
