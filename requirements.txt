@@ -1,25 +1,15 @@
-# 核心框架
 langchain==0.2.12
-langchain-community==0.2.12
 
-# 大模型与 Embedding
-dashscope==1.20.0          # 阿里云 DashScope SDK（Qwen LLM + Embedding）
+dashscope
 
-# 向量库
-faiss-cpu==1.8.0.post1     # FAISS 向量检索（CPU 版，如需 GPU 可换 faiss-gpu）
+faiss-cpu
 
-# 数据处理
-pandas==2.2.2
-openpyxl==3.1.5            # Excel 支持
-python-dotenv==1.0.1       # .env 文件加载
+pandas
+openpyxl==3.1.5
+python-dotenv==1.0.1
 
-# PDF 解析（财报）
-unstructured[local-inference,pdf]==0.15.7
-pypdf==4.3.1               # 轻量 PDF 解析后端
+unstructured[local-inference,pdf]
+pypdf==4.3.1
+sqlalchemy==2.0.31
 
-# 数据库
-sqlalchemy==2.0.31         # SQLDatabase 依赖
-sqlite3                    # Python 内置，无需安装
-
-# 工具
-tqdm==4.66.5               # 进度条（可选，用于 parse_reports）
+tqdm

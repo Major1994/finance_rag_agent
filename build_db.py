@@ -1,12 +1,9 @@
 # build_db.py
 
-import sys
 import argparse
-from pathlib import Path
 
-from src.build_report_rag import build_report_rag
-from src.load_stock_prices import parse_and_load_stock_files
-
+from src.report_rag.build_report_rag import build_report_rag
+from src.nl2sql.csv_to_sqlite import csv_to_sqlite
 def main():
     parser = argparse.ArgumentParser(description="FinChatBI - 数据构建工具")
     parser.add_argument("--report", action="store_true", help="构建财报 RAG 向量库 (report_faiss_db/)")
@@ -26,10 +23,8 @@ def main():
 
     if args.stock:
         print("📈 构建股价数据库...")
-        parse_and_load_stock_files(
-            stock_dir="data/stock_prices",
-            db_path="databases/finance.db"
-        )
+        csv_to_sqlite("data/stock_prices/上市公司基本信息.csv", db_file="stock_info.db", table_name="company_info")
+        csv_to_sqlite("data/stock_prices/股票日线.csv", db_file="stock_info.db", table_name="stock_daily")
         print("✅ 股价数据库构建完成！")
 
 if __name__ == "__main__":

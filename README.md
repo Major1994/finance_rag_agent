@@ -14,7 +14,6 @@
 | **向量检索** | FAISS（本地存储） |
 | **结构化查询** | SQLite + LangChain SQL Agent |
 | **PDF 解析** | `unstructured` + `pypdf` |
-| **部署方式** | 单机 CLI（无需 Web 服务） |
 
 
 ## 🚀 快速开始
@@ -34,7 +33,11 @@ pip install -r requirements.txt
 将 财报 PDF 放入 data/financial_reports/
 示例文件名：600519_2023年报.pdf
 将 股价数据（CSV 或 Excel）放入 data/stock_prices/
-必须包含列：symbol, date, open, high, low, close, volume
+建议使用TuShare数据：
+上市公司基本信息.csv
+管理层持股.csv
+股票日线.csv
+高管信息.csv
 
 ### 4. 构建数据资产
 ```
